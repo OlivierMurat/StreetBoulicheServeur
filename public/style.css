@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font: 13px Helvetica, Arial;
+    transition: all 0.5s;
+}
+
+.puissance4 {
+    border-collapse: collapse;
+}
+
+.puissance4 th.cell
+{
+    width: 50px;
+    height: 50px;
+    border-right: solid 1px black;
+    border-left: solid 1px black;
+}
+
+.puissance4 td.cell{
+    background-color: rgb(20, 129, 255);
+}
+
+.puissance4 td.cell, .puissance4 th.cell{
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.puissance4 td.cell::after, .puissance4 th.cell::after{
+    content: "";
+    background-color: #FFF;
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+}
+
+.puissance4 td.cell.player1::after, .puissance4 th.cell.player1::after{
+    background-color: #F00;
+}
+.puissance4 td.cell.player2::after, .puissance4 th.cell.player2::after{
+    background-color: #FF0;
+}
+body .waiting-screen{
+    display: none;
+}
+
+body .game {
+    display: block;
+}
+
+body.needWait .waiting-screen {
+    display: block;
+}
+
+body.needWait .game {
+    display: none;
+}
